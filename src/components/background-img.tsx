@@ -8,7 +8,6 @@ export default function BackgroundImg() {
         alt="Background Image"
         placeholder="blur"
         className="background-img"
-        // priority
       />
     </div>
   );
