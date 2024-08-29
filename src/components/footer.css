@@ -1,0 +1,17 @@
+.footer-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  justify-content: end;
+}
+.footer-content {
+  padding: 0 10px 7px 0;
+}
+.footer-content a {
+  align-items: center;
+}
+.footer-content a:hover {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
