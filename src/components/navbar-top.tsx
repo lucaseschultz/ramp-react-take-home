@@ -12,7 +12,7 @@ export default function NavbarTop() {
         </a>
         <span className="navbar-separator">/</span>
         <a href={"./"} target={"_blank"}>
-          Flag Script
+          CTF Script
         </a>
       </div>
     </nav>
