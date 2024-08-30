@@ -1,4 +1,5 @@
 import "./ramp-flag.css";
+import Suspense from "react";
 
 export default function RampFlag() {
   return (
