@@ -1,8 +1,4 @@
 .flag-content {
-  width: 100vw;
-  height: 75vh;
-  align-items: center;
-  justify-content: center;
   font-size: 5rem;
 }
 .loading,
