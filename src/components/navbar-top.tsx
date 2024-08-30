@@ -8,7 +8,7 @@ export default function NavbarTop() {
           href={"https://github.com/lucaseschultz/ramp-react-take-home"}
           target={"_blank"}
         >
-          This VCS
+          This Repository
         </a>
         <span className="navbar-separator">/</span>
         <a href={"./"} target={"_blank"}>
