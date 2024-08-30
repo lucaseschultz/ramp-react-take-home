@@ -13,6 +13,9 @@ body * {
 a {
   text-decoration: none;
 }
+.app {
+  flex-direction: column;
+}
 
 script {
   display: none;
