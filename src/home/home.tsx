@@ -1,5 +1,5 @@
 import "./main.css";
-import RampFlag from "./main/ramp-flag";
+import RampFlag from "../components/main/ramp-flag";
 
 export default function Main() {
   return (
