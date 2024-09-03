@@ -1,5 +1,5 @@
 import "./background-img.css";
-const BGIMG = require("../images/background-wood.jpg");
+const BGIMG = require("../assets/background-wood.jpg");
 
 export default function BackgroundImg() {
   return (
