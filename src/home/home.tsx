@@ -1,4 +1,4 @@
-import "./main.css";
+import "./home.css";
 import RampFlag from "../components/main/ramp-flag";
 
 export default function Main() {
