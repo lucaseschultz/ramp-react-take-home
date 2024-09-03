@@ -1,5 +1,10 @@
 .flag-content {
-  font-size: 5rem;
+  font-size: 4rem;
+}
+@media only screen and (min-width: 960px) {
+  .flag-content {
+    font-size: 5rem;
+  }
 }
 .loading,
 .dots {
