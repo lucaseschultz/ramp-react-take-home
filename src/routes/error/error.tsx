@@ -6,13 +6,9 @@ export default function Error() {
     <div className="main">
       <div className="content">
         <h1>Sorry</h1>
-        <span>We couldn't find that page Test</span>
+        <span>We couldn't find that page</span>
       </div>
-      <img
-        src={"./assets/magnifying-glass.jpg"}
-        alt="Error Image"
-        className="error-img"
-      />
+      <img src={String(ErrorImg)} alt="Error Image" className="error-img" />
     </div>
   );
 }
