@@ -17,7 +17,7 @@ export default function App() {
       <NavbarTop otherPageName={otherPageName} otherPageLink={otherPageLink} />
       <Router>
         <Routes>
-          <Route path="/" element={<Error />} errorElement={<Error />} />
+          <Route path="/" element={<Main />} errorElement={<Error />} />
           <Route
             path="/settings"
             element={<CTFScript />}
