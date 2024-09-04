@@ -1,6 +1,12 @@
 import "./navbar-top.css";
 
-export default function NavbarTop() {
+export default function NavbarTop({
+  otherPageName,
+  otherPageLink,
+}: {
+  otherPageName: string;
+  otherPageLink: string;
+}) {
   return (
     <nav className={`navbar-container`}>
       <div className={"navbar-content"}>
@@ -11,8 +17,8 @@ export default function NavbarTop() {
           This Repository
         </a>
         <span className="navbar-separator">/</span>
-        <a href={"./"} target={"_blank"}>
-          CTF Script
+        <a href={otherPageLink} target={"_blank"}>
+          {otherPageName}
         </a>
       </div>
     </nav>
