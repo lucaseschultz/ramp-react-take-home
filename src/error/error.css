@@ -3,7 +3,7 @@
   height: 75vh;
   align-items: center;
   justify-content: center;
-  padding-left: 53px;
+  padding-left: 10px;
 }
 .content {
   flex-direction: column;
@@ -19,11 +19,12 @@ h1 {
 }
 
 @media only screen and (min-width: 960px) {
+  .main {
+    padding-left: 80px;
+  }
   .error-img {
     width: 240px;
     height: 137px;
-  }
-  .main {
-    padding-left: 80px;
+    margin-left: 15px;
   }
 }
