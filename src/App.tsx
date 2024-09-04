@@ -6,6 +6,7 @@ import NavbarTop from "./components/navbar-top";
 import Footer from "./components/footer";
 import Main from "./home/home";
 import CTFScript from "./ctf-script/ctf-script";
+import Error from "./error/error";
 
 export default function App() {
   const [otherPageName, setOtherPageName] = useState("CTF Script");
@@ -16,8 +17,12 @@ export default function App() {
       <NavbarTop otherPageName={otherPageName} otherPageLink={otherPageLink} />
       <Router>
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/settings" element={<CTFScript />} />
+          <Route path="/" element={<Main />} errorElement={<Error />} />
+          <Route
+            path="/settings"
+            element={<CTFScript />}
+            errorElement={<Error />}
+          />
         </Routes>
       </Router>
       <Footer />
