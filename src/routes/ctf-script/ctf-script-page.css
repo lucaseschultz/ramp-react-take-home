@@ -1,6 +1,12 @@
-.main {
+.ctf-script-page-main {
   width: 100vw;
   height: 75vh;
-  align-items: center;
+  margin-top: 25px;
   justify-content: center;
+}
+.script-container > pre > code {
+  width: 90vw;
+}
+span {
+  display: inline-flex;
 }
