@@ -1,11 +1,12 @@
 import "./ctf-script-page.css";
+import CTFScript from "./components/ctf-script";
 
-export default function CTFScript() {
+export default function CTFScriptPage() {
   return (
     <div className="main">
       <div className="content">
         <div className="code-container">
-          <code></code>
+          <CTFScript />
         </div>
       </div>
     </div>
