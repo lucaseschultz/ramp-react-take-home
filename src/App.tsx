@@ -22,7 +22,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} errorElement={<Error />} />
           <Route
-            path="/settings"
+            path="/ctf-script"
             element={<CTFScript />}
             errorElement={<Error />}
           />
