@@ -5,7 +5,7 @@ import BackgroundImage from "./components/background-img";
 import NavbarTop from "./components/navbar-top";
 import Footer from "./components/footer";
 import Home from "./routes/home/home";
-import CTFScript from "./routes/ctf-script/ctf-script-page";
+import CTFScriptPage from "./routes/ctf-script/ctf-script-page";
 import Error from "./routes/error/error";
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/" element={<Home />} errorElement={<Error />} />
           <Route
             path="/ctf-script-page"
-            element={<CTFScript />}
+            element={<CTFScriptPage />}
             errorElement={<Error />}
           />
         </Routes>
