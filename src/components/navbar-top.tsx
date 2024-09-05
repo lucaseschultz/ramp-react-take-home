@@ -1,4 +1,5 @@
 import "./navbar-top.css";
+import { Link } from "react-router-dom";
 
 export default function NavbarTop({
   otherPageName,
@@ -17,9 +18,9 @@ export default function NavbarTop({
           This Repository
         </a>
         <span className="navbar-separator">/</span>
-        <a href={otherPageLink} target={"_blank"}>
+        <Link to={otherPageLink}>
           {otherPageName}
-        </a>
+        </Link>
       </div>
     </nav>
   );
