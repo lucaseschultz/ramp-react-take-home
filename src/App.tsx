@@ -10,7 +10,7 @@ import Error from "./routes/error/error";
 
 export default function App() {
   const [otherPageName, setOtherPageName] = useState("CTF Script");
-  let [otherPageLink, setOtherPageLink] = useState("./settings");
+  let [otherPageLink, setOtherPageLink] = useState("./ctf-script-page");
   return (
     <div className="app">
       <Router>
