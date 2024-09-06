@@ -10,6 +10,10 @@ body * {
   display: flex;
   color: #dfdfe2;
 }
+#root {
+  height: 100vh;
+  width: 100vw;
+}
 a {
   text-decoration: none;
 }
