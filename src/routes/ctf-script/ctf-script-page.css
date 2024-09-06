@@ -7,7 +7,7 @@
 }
 .script-container {
   width: 90vw;
-  height: 82vh;
+  max-height: 82vh;
   font-size: 0.87rem;
   overflow: scroll;
 }
