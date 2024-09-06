@@ -3,9 +3,9 @@ import CTFScript from "./components/ctf-script";
 
 export default function CTFScriptPage() {
   return (
-    <div className="main">
-      <div className="content">
-        <div className="code-container">
+    <div className="ctf-script-page-main">
+      <div className="ctf-script-page-content">
+        <div className="script-container">
           <CTFScript />
         </div>
       </div>
