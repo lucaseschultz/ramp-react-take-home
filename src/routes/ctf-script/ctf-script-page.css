@@ -1,6 +1,7 @@
 .ctf-script-page-main {
   width: 100vw;
   height: 75vh;
+<<<<<<< HEAD
   margin-top: 25px;
   justify-content: center;
 }
@@ -11,3 +12,11 @@
 span {
   display: inline-flex;
 }
+=======
+  margin-top: 20px;
+  justify-content: center;
+}
+.code-container {
+  display: none;
+}
+>>>>>>> 67c3a9d7a612a7c60d866b6af028ceb42f5a95ce
