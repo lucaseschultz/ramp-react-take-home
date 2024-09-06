@@ -4,8 +4,9 @@
   margin-top: 25px;
   justify-content: center;
 }
-.script-container > pre > code {
+.ctf-script-page-content {
   width: 90vw;
+  overflow: scroll;
 }
 span {
   display: inline-flex;
