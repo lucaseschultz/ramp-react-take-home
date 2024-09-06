@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
-import "highlight.js/styles/github.css";
+import "highlight.js/styles/github-dark-dimmed.min.css";
 
 const markMarkdown = async () => {
   const markedMarkdown = await marked.parse(markdown);
@@ -17,8 +17,8 @@ export default function CTFScript() {
 }
 
 const markdown =
-  `
-  import puppeteer from "puppeteer";
+  `<pre><code>
+import puppeteer from "puppeteer";
 
 const getQuotes = async () => {
     const browser = await puppeteer.launch({
@@ -88,4 +88,4 @@ const getQuotes = async () => {
 };
 
 getQuotes();
-`;
+</code></pre>`;
