@@ -19,14 +19,16 @@ export default function App() {
           otherPageName={otherPageName}
           otherPageLink={otherPageLink}
         />
-        <Routes>
-          <Route path="/" element={<Home />} errorElement={<Error />} />
-          <Route
-            path="/ctf-script-page"
-            element={<CTFScriptPage />}
-            errorElement={<Error />}
-          />
-        </Routes>
+        <div className={'main'}>
+          <Routes>
+            <Route path="/" element={<Home />} errorElement={<Error />} />
+            <Route
+              path="/ctf-script-page"
+              element={<CTFScriptPage />}
+              errorElement={<Error />}
+            />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </div>
