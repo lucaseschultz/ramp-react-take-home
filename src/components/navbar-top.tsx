@@ -14,13 +14,12 @@ export default function NavbarTop({
         <a
           href={"https://github.com/lucaseschultz/ramp-react-take-home"}
           target={"_blank"}
+          rel={"noopener"}
         >
           This Repository
         </a>
         <span className="navbar-separator">/</span>
-        <Link to={otherPageLink}>
-          {otherPageName}
-        </Link>
+        <Link to={otherPageLink}>{otherPageName}</Link>
       </div>
     </nav>
   );

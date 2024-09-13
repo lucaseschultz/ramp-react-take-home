@@ -3,7 +3,6 @@ import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark-dimmed.min.css";
 
-const updateNavbar = () => {};
 const markMarkdown = async () => {
   const markedMarkdown = await marked.parse(markdown);
   document.getElementById("script")!.innerHTML = markedMarkdown;
@@ -12,14 +11,12 @@ const markMarkdown = async () => {
 
 export default function CTFScript() {
   useEffect(() => {
-    updateNavbar();
     markMarkdown();
   });
   return <div id="script"></div>;
 }
 
-const markdown =
-  `<pre><code>
+const markdown = `<pre><code>
 import puppeteer from "puppeteer";
 
 const getQuotes = async () => {
