@@ -21,10 +21,40 @@ export default function App() {
         />
         <div className={'main'}>
           <Routes>
-            <Route path="/" element={<Home />} errorElement={<Error />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  otherPageName={otherPageName}
+                  setOtherPageName={setOtherPageName}
+                  otherPageLink={otherPageLink}
+                  setOtherPageLink={setOtherPageLink}
+                />
+              }
+              errorElement={<Error />}
+            />
+            <Route
+              path="/home"
+              element={
+                <Home
+                  otherPageName={otherPageName}
+                  setOtherPageName={setOtherPageName}
+                  otherPageLink={otherPageLink}
+                  setOtherPageLink={setOtherPageLink}
+                />
+              }
+              errorElement={<Error />}
+            />
             <Route
               path="/ctf-script-page"
-              element={<CTFScriptPage />}
+              element={
+                <CTFScriptPage
+                  otherPageName={otherPageName}
+                  setOtherPageName={setOtherPageName}
+                  otherPageLink={otherPageLink}
+                  setOtherPageLink={setOtherPageLink}
+                />
+              }
               errorElement={<Error />}
             />
           </Routes>
