@@ -4,8 +4,7 @@ import hljs from "highlight.js";
 import "highlight.js/styles/github-dark-dimmed.min.css";
 
 const markMarkdown = async () => {
-  const markedMarkdown = await marked.parse(markdown);
-  document.getElementById("script")!.innerHTML = markedMarkdown;
+  document.getElementById("script")!.innerHTML = await marked.parse(markdown);
   hljs.highlightAll();
 };
 
