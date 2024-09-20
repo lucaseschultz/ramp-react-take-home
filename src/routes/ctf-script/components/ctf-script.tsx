@@ -74,9 +74,9 @@ const getQuotes = async () => {
         });
         console.log(link);
         return link;
-    //  as of 8/22/24:
-    //  returns https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/746162
-    //  link contains the work "tabloid"
+    //  as of 9/20/24:
+    //  returns https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/707261
+    //  link contains the work "praying"
     });
     console.log(FLAG);
 
