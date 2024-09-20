@@ -1,31 +1,16 @@
 import "./ramp-flag.css";
-// import { Suspense } from "react";
+import { Suspense } from "react";
+import LoadingFlag from "./ramp-flag-components/loading-flag";
+import LoadedFlag from "./ramp-flag-components/loaded-flag";
 
 export default function RampFlag() {
   return (
     <div className={"flag-container"}>
       <div className={"flag-content"}>
-        <LoadingFlag />
-        {/* <Suspense fallback={<LoadingFlag />}>
+        <Suspense fallback={<LoadingFlag />}>
           <LoadedFlag />
-        </Suspense> */}
+        </Suspense>
       </div>
     </div>
-  );
-}
-
-function LoadingFlag() {
-  return (
-    <span className={"loading"}>
-      Loading<span className="dots"></span>
-    </span>
-  );
-}
-
-function LoadedFlag() {
-  return (
-    <span className={"loading"}>
-      Loading<span className="dots"></span>
-    </span>
   );
 }
