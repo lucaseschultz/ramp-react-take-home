@@ -7,22 +7,13 @@ const fetchFlag = async () => {
             throw new Error('Network response was not ok');
         }
         const HTML = await response.text();
-        const PARSER = new DOMParser();
-        const FLAG_URL = PARSER.parseFromString(HTML, "text/html");
-        const FLAG_CONTAINER = FLAG_URL.querySelector('body');
-        if (!FLAG_CONTAINER) {
-            throw new Error('No Body Element Found');
-        } else {
-            const FLAG = FLAG_CONTAINER.textContent;
-            if (!FLAG) {
-                throw new Error('Nothing found in page body')
-            } else {
-                const FLAG_ARRAY = FLAG.split('');
-                FLAG_ARRAY.forEach(() => {
-
-                });
-            }
-        }
+        const FLAG_URL = new DOMParser().parseFromString(HTML, "text/html");
+        const FLAG_ARRAY = FLAG_URL.querySelector('body')!.textContent!.split('');
+        const FLAG_OL = document.getElementsByClassName('flag-list');
+        FLAG_ARRAY.forEach((letter) => {
+            FLAG_OL[0].appendChild(document.createElement('li'));
+            setTimeout(() => {}, 500)
+        });
     } catch (error) {
         // TypeError: Failed to fetch
         console.log(error);
