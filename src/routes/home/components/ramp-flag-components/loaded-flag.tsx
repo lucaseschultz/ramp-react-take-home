@@ -21,8 +21,7 @@ export default function LoadedFlag() {
         fetchFlag();
     }, []);
     return (
-        <span className={"loading"}>
-      Loading<span className="dots"></span>
-    </span>
+        <ol className={'flag-list'}>
+        </ol>
     );
 }
