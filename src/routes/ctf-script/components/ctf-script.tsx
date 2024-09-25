@@ -61,7 +61,7 @@ const getQuotes = async () => {
                                 const SPAN_CHILDREN = CURR_DIV_CHILD.children;
                                 for (let e=0; e&lt;SPAN_CHILDREN.length; e++) {
                                     const CURR_SPAN_CHILD = SPAN_CHILDREN[e];
-                                    if (CURR_SPAN_CHILD.nodeName === "I" && CURR_SPAN_CHILD.className.match(/^(.*\s)?char(\s.*)?$/) && CURR_SPAN_CHILD.hasAttribute("value")) {
+                                    if (CURR_SPAN_CHILD.nodeName === "I" && CURR_SPAN_CHILD.className.match(/^(.*&bsol;s)?char(&bsol;s.*)?$/) && CURR_SPAN_CHILD.hasAttribute("value")) {
                                         // adding valid link char to create/find CTF link
                                         link += CURR_SPAN_CHILD.getAttribute("value");
                                     }
