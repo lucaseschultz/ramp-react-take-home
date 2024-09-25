@@ -6,10 +6,23 @@ const fetchFlag = async () => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
-        const bookTitles = doc.querySelectorAll('body');
+        const HTML = await response.text();
+        const PARSER = new DOMParser();
+        const FLAG_URL = PARSER.parseFromString(HTML, "text/html");
+        const FLAG_CONTAINER = FLAG_URL.querySelector('body');
+        if (!FLAG_CONTAINER) {
+            throw new Error('No Body Element Found');
+        } else {
+            const FLAG = FLAG_CONTAINER.textContent;
+            if (!FLAG) {
+                throw new Error('Nothing found in page body')
+            } else {
+                const FLAG_ARRAY = FLAG.split('');
+                FLAG_ARRAY.forEach(() => {
+
+                });
+            }
+        }
     } catch (error) {
         // TypeError: Failed to fetch
         console.log(error);
