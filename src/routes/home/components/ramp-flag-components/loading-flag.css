@@ -1,0 +1,25 @@
+.loading,
+.dots {
+    color: #f5f5dc;
+}
+.dots::after {
+    content: "";
+    width: 1em;
+    animation: dots 2.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%,
+    20% {
+        content: "";
+    }
+    40% {
+        content: ".";
+    }
+    60% {
+        content: "..";
+    }
+    80% {
+        content: "...";
+    }
+}
