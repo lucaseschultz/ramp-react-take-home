@@ -1,11 +1,6 @@
 .flag-content {
   font-size: 4rem;
 }
-@media only screen and (min-width: 960px) {
-  .flag-content {
-    font-size: 5rem;
-  }
-}
 .loading,
 .dots {
   color: #f5f5dc;
@@ -15,9 +10,11 @@
   width: 1em;
   animation: dots 2.5s steps(4, end) infinite;
 }
-.flag-list {
-  color: #add8e6;
-  list-style: none;
+
+@media only screen and (min-width: 960px) {
+  .flag-content {
+    font-size: 5rem;
+  }
 }
 
 @keyframes dots {
