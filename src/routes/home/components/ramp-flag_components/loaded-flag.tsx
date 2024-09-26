@@ -9,8 +9,8 @@ const fetchFlag = async () => {
       throw new Error("Network response was not ok");
     }
     const HTML = await response.text();
-    const FLAG_URL = new DOMParser().parseFromString(HTML, "text/html");
-    const FLAG_ARRAY = FLAG_URL.querySelector("body")!.textContent!.split("");
+    const FLAG_DOM = new DOMParser().parseFromString(HTML, "text/html");
+    const FLAG_ARRAY = FLAG_DOM.querySelector("body")!.textContent!.split("");
     const FLAG_OL = document.getElementsByClassName("flag-list");
     FLAG_ARRAY.forEach((letter) => {
       const LETTER_LI = document.createElement('li');
