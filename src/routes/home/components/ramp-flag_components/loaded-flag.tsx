@@ -16,7 +16,6 @@ const fetchFlag = async () => {
       const LETTER_LI = document.createElement('li');
       LETTER_LI.textContent = letter;
       FLAG_OL[0].appendChild(LETTER_LI);
-      setTimeout(() => {}, 500);
     });
   } catch (error) {
     // TypeError: Failed to fetch
@@ -30,3 +29,6 @@ export default function LoadedFlag() {
   }, []);
   return <ol className={"flag-list"}></ol>;
 }
+
+
+// setTimeout(() => {}, 500);
