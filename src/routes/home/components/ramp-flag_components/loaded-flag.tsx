@@ -24,8 +24,8 @@ const fetchFlag = async () => {
 };
 
 export default function LoadedFlag() {
-  useEffect(() => {
-    fetchFlag();
+  useEffect(async() => {
+    fetchFlag(await fetchFlagUrl());
   }, []);
   return <ol className={"flag-list"}></ol>;
 }
