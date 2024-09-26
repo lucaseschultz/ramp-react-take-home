@@ -9,9 +9,9 @@ const fetchFlag = async () => {
         const HTML = await response.text();
         const FLAG_URL = new DOMParser().parseFromString(HTML, "text/html");
         const FLAG_ARRAY = FLAG_URL.querySelector('body')!.textContent!.split('');
-        const FLAG_OL = document.getElementsByClassName('flag-list');
+        const FLAG_CONTAINER = document.getElementsByClassName('flag-list');
         FLAG_ARRAY.forEach((letter) => {
-            FLAG_OL[0].appendChild(document.createElement('li'));
+            FLAG_CONTAINER[0].textContent += letter;
             setTimeout(() => {}, 500)
         });
     } catch (error) {
@@ -25,7 +25,7 @@ export default function LoadedFlag() {
         fetchFlag();
     }, []);
     return (
-        <ol className={'flag-list'}>
-        </ol>
+        <span className={'flag-list'}>
+        </span>
     );
 }
