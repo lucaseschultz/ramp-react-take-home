@@ -16,72 +16,51 @@ export default function CTFScript() {
 }
 
 const markdown = `<pre><code>
-import puppeteer from "puppeteer";
+const fetchFlagUrl = async () => {
+  const response = await fetch("https://tns4lpgmziiypnxxzel5ss5nyu0nftol.lambda-url.us-east-1.on.aws/challenge")
+  const HTML = await response.text();
+  const FLAG_DOM = new DOMParser().parseFromString(HTML, "text/html");
+  const CODE_CONTAINERS = FLAG_DOM.querySelectorAll("code");
+  let link = ""
 
-const getQuotes = async () => {
-    const browser = await puppeteer.launch({
-        // Easier to debug because you'll see the browser in action
-        headless: false,
-        // Load website page in full screen
-        defaultViewport: null,
-    });
-    const [page] = await browser.pages();
-
-    await page.goto("https://tns4lpgmziiypnxxzel5ss5nyu0nftol.lambda-url.us-east-1.on.aws/challenge", {
-      // Wait for all DOM content to be accessable
-      waitUntil: "domcontentloaded",
-    });
-
-    const FLAG = await page.evaluate(() => {
-        // span[data-id="{/.*21.*/}"] > i.char[value="VALID_CHARACTER"]
-        // grabbing a NodeList of all qualifying code containers
-        const CODE_CONTAINERS = document.querySelectorAll("code");
-        let link = ""
-
-        // searching NodeList for DOM's containing link chars
-        // DOM pattern for each link char:
-            // &lt;code data-class="23*">
-            //     &lt;div data-tag="*93">
-            //         &lt;span data-id="*21*">
-            //             &lt;i class="char" value="VALID_CHARACTER"></i>
-            //         &lt;/span>
-            //     &lt;/div>
-            // &lt;/code>
-        CODE_CONTAINERS.forEach((CURR_CONTAINER) =>
-        {
-            if (CURR_CONTAINER.hasAttribute("data-class") && CURR_CONTAINER.getAttribute("data-class").match(/^23/) && CURR_CONTAINER.hasChildNodes()) {
-                const CODE_CHILDREN = CURR_CONTAINER.children;
-                for (let i=0; i&lt;CODE_CHILDREN.length; i++) {
-                    const CURR_CODE_CHILD = CODE_CHILDREN[i];
-                    if (CURR_CODE_CHILD.nodeName === 'DIV' && CURR_CODE_CHILD.hasAttribute("data-tag") && CURR_CODE_CHILD.getAttribute("data-tag").match(/93$/) && CURR_CODE_CHILD.hasChildNodes()) {
-                        const DIV_CHILDREN = CURR_CODE_CHILD.children;
-                        for (let f=0; f&lt;DIV_CHILDREN.length; f++) {
-                            const CURR_DIV_CHILD = DIV_CHILDREN[f];
-                            if (CURR_DIV_CHILD.nodeName === "SPAN" && CURR_DIV_CHILD.hasAttribute("data-id") && CURR_DIV_CHILD.getAttribute("data-id").match(/21/) && CURR_DIV_CHILD.hasChildNodes()) {
-                                const SPAN_CHILDREN = CURR_DIV_CHILD.children;
-                                for (let e=0; e&lt;SPAN_CHILDREN.length; e++) {
-                                    const CURR_SPAN_CHILD = SPAN_CHILDREN[e];
-                                    if (CURR_SPAN_CHILD.nodeName === "I" && CURR_SPAN_CHILD.className.match(/^(.*&bsol;s)?char(&bsol;s.*)?$/) && CURR_SPAN_CHILD.hasAttribute("value")) {
-                                        // adding valid link char to create/find CTF link
-                                        link += CURR_SPAN_CHILD.getAttribute("value");
-                                    }
-                                }
-                            }
-                        }
-                    }
+  // searching NodeList for DOM's containing link chars
+  // DOM pattern for each link char:
+  // &lt;code data-class="23*">
+  //     &lt;div data-tag="*93">
+  //         &lt;span data-id="*21*">
+  //             &lt;i class="char" value="VALID_CHARACTER"></i>
+  //         </span>
+  //     </div>
+  // &lt;/code>
+  CODE_CONTAINERS.forEach((CURR_CONTAINER) =>
+  {
+    if (CURR_CONTAINER.getAttribute("data-class")!.match(/^23/)) {
+      const CODE_CHILDREN = CURR_CONTAINER.children;
+      for (let i=0; i<CODE_CHILDREN.length; i++) {
+        const CURR_CODE_CHILD = CODE_CHILDREN[i];
+        if (CURR_CODE_CHILD.nodeName === 'DIV' && CURR_CODE_CHILD.getAttribute("data-tag")!.match(/93$/)) {
+          const DIV_CHILDREN = CURR_CODE_CHILD.children;
+          for (let f=0; f<DIV_CHILDREN.length; f++) {
+            const CURR_DIV_CHILD = DIV_CHILDREN[f];
+            if (CURR_DIV_CHILD.nodeName === "SPAN" && CURR_DIV_CHILD.getAttribute("data-id")!.match(/21/)) {
+              const SPAN_CHILDREN = CURR_DIV_CHILD.children;
+              for (let e=0; e<SPAN_CHILDREN.length; e++) {
+                const CURR_SPAN_CHILD = SPAN_CHILDREN[e];
+                if (CURR_SPAN_CHILD.nodeName === "I" && CURR_SPAN_CHILD.className.match(/^(.*&bsol;&bsol;s)?char(&bsol;&bsol;s.*)?$/)) {
+                  // adding valid link char to create/find CTF link
+                  link += CURR_SPAN_CHILD.getAttribute("value");
                 }
+              }
             }
-        });
-        console.log(link);
-        return link;
-    //  as of 9/20/24:
-    //  returns https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/707261
-    //  link contains the work "praying"
-    });
-    console.log(FLAG);
-
-    await browser.close();
-};
-
-getQuotes();
+          }
+        }
+      }
+    }
+  });
+  console.log(link);
+  return link;
+  //  as of 9/20/24:
+  //  returns https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/707261
+  //  link contains the work "praying"
+}
 </code></pre>`;
