@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+let didInit = false;
 const fetchFlagUrl = async () => {
   try {
     const response = await fetch(
@@ -88,7 +89,10 @@ const fetchFlag = async () => {
 
 export default function LoadedFlag() {
   useEffect(() => {
-    fetchFlag();
+    if (!didInit) {
+      didInit = true;
+      fetchFlag();
+    }
   }, []);
   return <ol className={"flag-list"}></ol>;
 }
