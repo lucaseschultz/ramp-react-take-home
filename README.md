@@ -39,7 +39,7 @@ Pattern of the DOM tree for each valid character of the URL
    - Animation should run only once
    - Use React APIs only. Don't use CSS or external libraries
 
-Bonus: Add as a comment the script you used to to get the URL in step 2
+Bonus: Add as a comment the script you used to get the URL in step 2
 
 ## Submission
 
