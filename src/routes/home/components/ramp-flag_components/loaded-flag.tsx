@@ -3,7 +3,7 @@ import { useEffect } from "react";
 let didInit = false;
 
 const fetchFlag = async () => {
-  const FLAG_LINK = 'https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/707261';
+  const FLAG_LINK = 'https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/6d6f72';
   // grabbing flag from flag link and inserting into page
   try {
     const response = await fetch(FLAG_LINK);
