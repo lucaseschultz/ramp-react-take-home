@@ -12,11 +12,12 @@ const fetchFlag = async () => {
     const HTML = await response.text();
     const FLAG_DOM = new DOMParser().parseFromString(HTML, "text/html");
     const FLAG_ARRAY = FLAG_DOM.querySelector("body")!.textContent!.split("");
-    const FLAG_OL = document.getElementsByClassName("flag-list");
+    const FLAG_OL = document.getElementsByClassName("flag-list")[0];
+    FLAG_OL.innerHTML = "";
     FLAG_ARRAY.forEach((letter) => {
       const LETTER_LI = document.createElement("li");
       LETTER_LI.textContent = letter;
-      FLAG_OL[0].appendChild(LETTER_LI);
+      FLAG_OL.appendChild(LETTER_LI);
       setTimeout(() => {}, 500);
     });
   } catch (error: any) {
