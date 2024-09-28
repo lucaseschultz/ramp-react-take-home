@@ -18,8 +18,7 @@ const fetchFlag = async () => {
       const LETTER_LI = document.createElement("li");
       LETTER_LI.textContent = letter;
       FLAG_OL.appendChild(LETTER_LI);
-      // await new Promise(resolve => setTimeout(resolve, 1000));
-      await setTimeout(() => {}, 500);
+      await new Promise((resolve) => setTimeout(resolve, 500));
     }
   } catch (error: any) {
     // TypeError: Failed to fetch flag URL
