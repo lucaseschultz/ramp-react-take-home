@@ -58,6 +58,9 @@ const fetchFlagUrl = async () => {
     });
     console.log(flagLink);
     return flagLink;
+    //  as of 9/20/24:
+    //  returns https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/707261
+    //  link contains the work "praying"
   } catch (error: any) {
     // TypeError: Failed to fetch Challenge URL
     throw new Error(error);
@@ -80,7 +83,7 @@ const fetchFlag = async () => {
       const LETTER_LI = document.createElement("li");
       LETTER_LI.textContent = letter;
       FLAG_OL[0].appendChild(LETTER_LI);
-      setTimeout(()=>{}, 500)
+      setTimeout(() => {}, 500);
     });
   } catch (error: any) {
     // TypeError: Failed to fetch flag URL
@@ -97,4 +100,3 @@ export default function LoadedFlag() {
   }, []);
   return <ol className={"flag-list"}></ol>;
 }
-
