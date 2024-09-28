@@ -25,13 +25,9 @@ const fetchFlag = async () => {
   }
 };
 
-let didInit = false;
 export default function LoadedFlag() {
   useEffect(() => {
-    if (!didInit) {
-      didInit = true;
-      fetchFlag();
-    }
+    fetchFlag();
   }, []);
   return <ol className={"flag-list"}></ol>;
 }

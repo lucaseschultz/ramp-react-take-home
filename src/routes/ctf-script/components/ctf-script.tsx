@@ -8,12 +8,9 @@ const markMarkdown = async () => {
   hljs.highlightAll();
 };
 
-let didInit = false;
 export default function CTFScript() {
   useEffect(() => {
-    if (!didInit) {
-      markMarkdown();
-    }
+    markMarkdown();
   });
   return <div id="script"></div>;
 }
