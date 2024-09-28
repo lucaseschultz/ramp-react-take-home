@@ -14,12 +14,13 @@ const fetchFlag = async () => {
     const FLAG_ARRAY = FLAG_DOM.querySelector("body")!.textContent!.split("");
     const FLAG_OL = document.getElementsByClassName("flag-list")[0];
     FLAG_OL.innerHTML = "";
-    FLAG_ARRAY.forEach((letter) => {
+    for (const letter of FLAG_ARRAY) {
       const LETTER_LI = document.createElement("li");
       LETTER_LI.textContent = letter;
       FLAG_OL.appendChild(LETTER_LI);
-      setTimeout(() => {}, 500);
-    });
+      // await new Promise(resolve => setTimeout(resolve, 1000));
+      await setTimeout(() => {}, 500);
+    }
   } catch (error: any) {
     // TypeError: Failed to fetch flag URL
     throw new Error(error);
