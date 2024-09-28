@@ -15,10 +15,10 @@ const fetchFlag = async () => {
     const FLAG_OL = document.getElementsByClassName("flag-list")[0];
     FLAG_OL.innerHTML = "";
     for (const letter of FLAG_ARRAY) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const LETTER_LI = document.createElement("li");
       LETTER_LI.textContent = letter;
       FLAG_OL.appendChild(LETTER_LI);
-      await new Promise((resolve) => setTimeout(resolve, 500));
     }
   } catch (error: any) {
     // TypeError: Failed to fetch flag URL
